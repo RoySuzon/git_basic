@@ -1,29 +1,34 @@
 # 🚀 Complete GitHub Course (বাংলা)
-## Beginner → Advanced Professional GitHub Guide
+# Beginner → Advanced Professional Guide
 
-> 📘 GitHub সম্পূর্ণ শেখার বাংলা কোর্স  
-> 🎯 Beginner থেকে Professional Workflow পর্যন্ত  
-> ⏱ Suggested Duration: ১.৫ – ২ ঘণ্টা
+> সম্পূর্ণ GitHub শেখার বাংলা Documentation  
+> Beginner থেকে Professional Workflow পর্যন্ত
 
 ---
 
+# 📚 Full Topic Navigation
 
-# 📚 Table of Contents
-
-- [📘 Module 1 — GitHub Introduction](#-module-1--github-introduction)
-- [📘 Module 2 — Repository](#-module-2--repository)
-- [📘 Module 3 — README & .gitignore](#-module-3--readme--gitignore)
-- [📘 Module 4 — Local Project → GitHub Connection](#-module-4--local-project--github-connection)
-- [📘 Module 5 — Push / Pull / Clone](#-module-5--push--pull--clone)
-- [📘 Module 6 — Branch Workflow](#-module-6--branch-workflow)
-- [📘 Module 7 — Pull Request (PR)](#-module-7--pull-request-pr)
-- [📘 Module 8 — Fork & Open Source](#-module-8--fork--open-source)
-- [📘 Module 9 — Issues & Collaboration](#-module-9--issues--collaboration)
-- [📘 Module 10 — SSH vs HTTPS](#-module-10--ssh-vs-https)
-- [📘 Module 11 — Professional Workflow](#-module-11--professional-workflow)
-- [📘 Module 12 — Best Practices](#-module-12--best-practices)
-- [🎯 Final Learning Outcome](#-final-learning-outcome)
-
+1. [GitHub Introduction](#-module-1--github-introduction)
+2. [Git vs GitHub](#-git-vs-github)
+3. [Repository](#-module-2--repository)
+4. [Public vs Private Repository](#-public-vs-private-repository)
+5. [README.md](#-readmemd)
+6. [.gitignore](#-gitignore)
+7. [GitHub Account Setup](#-github-account-setup)
+8. [Create Repository](#-create-repository)
+9. [Local Project Setup](#-local-project-setup)
+10. [GitHub Remote Connection](#-github-remote-connection)
+11. [Push / Pull / Clone](#-module-5--push--pull--clone)
+12. [Branch Workflow](#-module-6--branch-workflow)
+13. [Merge & Conflict](#-merge--conflict)
+14. [Pull Request (PR)](#-module-7--pull-request-pr)
+15. [Fork & Open Source](#-module-8--fork--open-source)
+16. [Issues & Collaboration](#-module-9--issues--collaboration)
+17. [SSH vs HTTPS](#-module-10--ssh-vs-https)
+18. [Professional Workflow](#-module-11--professional-workflow)
+19. [Best Practices](#-module-12--best-practices)
+20. [Important Commands Cheat Sheet](#-important-commands-cheat-sheet)
+21. [Final Learning Outcome](#-final-learning-outcome)
 
 ---
 
@@ -34,10 +39,21 @@
 GitHub হলো Cloud-based Git hosting platform।
 
 এটি ব্যবহার করা হয়:
-- Code hosting
+- Code Hosting
 - Collaboration
 - Portfolio
-- Open Source
+- Open Source Contribution
+- Backup
+
+---
+
+# 📌 Git vs GitHub
+
+| Git | GitHub |
+|---|---|
+| Local software | Online platform |
+| Version control | Collaboration |
+| Offline কাজ করে | Internet লাগে |
 
 ---
 
@@ -45,22 +61,44 @@ GitHub হলো Cloud-based Git hosting platform।
 
 ## 📌 Repository কী?
 
-Repository হলো project container যেখানে:
+Repository হলো Project container যেখানে:
 - Source code
 - History
-- Branch
+- Branches
 - README
+- Issues
+
 থাকে।
 
 ---
 
-# 📘 Module 3 — README & .gitignore
+# 📌 Public vs Private Repository
 
-## 📌 README.md
+## Public
+- সবাই দেখতে পারবে
+- Portfolio এর জন্য ভালো
 
-Project documentation file।
+## Private
+- শুধু আপনি বা Team দেখতে পারবে
+- Client Project এর জন্য ভালো
 
-## 📌 .gitignore
+---
+
+# 📘 README.md
+
+README হলো Project documentation file।
+
+Example:
+
+```md
+# Flutter Ecommerce App
+
+Modern ecommerce app using Flutter
+```
+
+---
+
+# 📘 .gitignore
 
 যে file Git track করবে না।
 
@@ -74,7 +112,24 @@ node_modules/
 
 ---
 
-# 📘 Module 4 — Local Project → GitHub Connection
+# 📘 GitHub Account Setup
+
+Website:
+https://github.com
+
+---
+
+# 📘 Create Repository
+
+GitHub Dashboard থেকে:
+- New Repository
+- Repository Name
+- Public / Private
+- Create Repository
+
+---
+
+# 📘 Local Project Setup
 
 ```bash
 mkdir github-course
@@ -82,8 +137,18 @@ cd github-course
 git init
 ```
 
+---
+
+# 📘 GitHub Remote Connection
+
 ```bash
 git remote add origin https://github.com/user/repo.git
+```
+
+Check Remote:
+
+```bash
+git remote -v
 ```
 
 ---
@@ -126,6 +191,27 @@ git merge feature-login
 
 ---
 
+# 📘 Merge & Conflict
+
+Conflict Example:
+
+```text
+<<<<<<< HEAD
+My Code
+=======
+Team Code
+>>>>>>>
+```
+
+Fix করার পর:
+
+```bash
+git add .
+git commit
+```
+
+---
+
 # 📘 Module 7 — Pull Request (PR)
 
 PR হলো Code Review Request।
@@ -154,13 +240,15 @@ Merge
 
 Fork মানে অন্যের repository নিজের account এ copy করা।
 
+Open Source Contribution এ ব্যবহার হয়।
+
 ---
 
 # 📘 Module 9 — Issues & Collaboration
 
 Issues ব্যবহার করা হয়:
-- Bug tracking
-- Feature request
+- Bug Tracking
+- Feature Request
 - Discussion
 
 ---
@@ -206,20 +294,47 @@ Merge
 # 📘 Module 12 — Best Practices
 
 ✅ Small commits করুন  
+✅ Proper commit message ব্যবহার করুন  
 ✅ Feature branch ব্যবহার করুন  
-✅ README maintain করুন  
+✅ Pull before push করুন  
 ✅ Secrets upload করবেন না  
+
+---
+
+# 📘 Important Commands Cheat Sheet
+
+```bash
+git init
+git status
+git add .
+git commit -m "message"
+
+git branch
+git switch -c branch-name
+git merge branch-name
+
+git push
+git pull
+git clone URL
+
+git stash
+git stash pop
+
+git reset --hard HEAD~1
+git revert COMMIT_ID
+```
 
 ---
 
 # 🎯 Final Learning Outcome
 
-এই course শেষে আপনি পারবেন:
+এই Course শেষে আপনি পারবেন:
 
 ✅ GitHub professionally ব্যবহার করতে  
-✅ Team collaboration করতে  
 ✅ Pull Request করতে  
+✅ Team collaboration করতে  
 ✅ Open source contribution শুরু করতে  
+✅ Professional workflow maintain করতে  
 
 ---
 
