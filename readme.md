@@ -1,377 +1,228 @@
-# 📘 Git & GitHub Basic Class Notes
+# 🚀 Complete GitHub Course (বাংলা)
+## Beginner → Advanced Professional GitHub Guide
 
-### Beginner Class Documentation (বাংলা)
-
-👨‍🏫 **Prepared By:** Goutom Roy
-💻 Flutter Mobile App Developer
-
-⏱ **ক্লাস সময়:** ৩০ মিনিট
-🎯 **লক্ষ্য:** Git এর একদম basic workflow বুঝা এবং প্রথম commit করা
+> 📘 GitHub সম্পূর্ণ শেখার বাংলা কোর্স  
+> 🎯 Beginner থেকে Professional Workflow পর্যন্ত  
+> ⏱ Suggested Duration: ১.৫ – ২ ঘণ্টা
 
 ---
 
-# 🚀 আজকের ক্লাসে যা শিখবো
 
-✅ Git কী
-✅ GitHub কী
-✅ Version Control System
-✅ Git Install Check
-✅ Repository তৈরি
-✅ File Track করা
-✅ Commit করা
-✅ Git History দেখা
+# 📚 Table of Contents
+
+- [📘 Module 1 — GitHub Introduction](#-module-1--github-introduction)
+- [📘 Module 2 — Repository](#-module-2--repository)
+- [📘 Module 3 — README & .gitignore](#-module-3--readme--gitignore)
+- [📘 Module 4 — Local Project → GitHub Connection](#-module-4--local-project--github-connection)
+- [📘 Module 5 — Push / Pull / Clone](#-module-5--push--pull--clone)
+- [📘 Module 6 — Branch Workflow](#-module-6--branch-workflow)
+- [📘 Module 7 — Pull Request (PR)](#-module-7--pull-request-pr)
+- [📘 Module 8 — Fork & Open Source](#-module-8--fork--open-source)
+- [📘 Module 9 — Issues & Collaboration](#-module-9--issues--collaboration)
+- [📘 Module 10 — SSH vs HTTPS](#-module-10--ssh-vs-https)
+- [📘 Module 11 — Professional Workflow](#-module-11--professional-workflow)
+- [📘 Module 12 — Best Practices](#-module-12--best-practices)
+- [🎯 Final Learning Outcome](#-final-learning-outcome)
+
 
 ---
 
-# 📌 Git কী?
+# 📘 Module 1 — GitHub Introduction
 
-Git হলো একটি **Version Control System (VCS)**।
+## 📌 GitHub কী?
+
+GitHub হলো Cloud-based Git hosting platform।
 
 এটি ব্যবহার করা হয়:
-
-* Code এর history রাখার জন্য
-* আগের version এ ফিরে যাওয়ার জন্য
-* Team এ কাজ করার জন্য
-* Project safely manage করার জন্য
-
----
-
-# 📌 Real Example
-
-ধরুন আপনি একটি app বানাচ্ছেন।
-
-আজ:
-
-* Login Page তৈরি করলেন
-
-আগামীকাল ভুল করে সব delete করে ফেললেন।
-
-Git থাকলে:
-
-✔ আগের version এ ফিরে যেতে পারবেন
-✔ কোন change কখন হয়েছে দেখতে পারবেন
+- Code hosting
+- Collaboration
+- Portfolio
+- Open Source
 
 ---
 
-# 📌 Git vs GitHub
+# 📘 Module 2 — Repository
 
-| Git                | GitHub            |
-| ------------------ | ----------------- |
-| Local software     | Online platform   |
-| Computer এ কাজ করে | Cloud এ code রাখে |
-| Version control    | Collaboration     |
+## 📌 Repository কী?
+
+Repository হলো project container যেখানে:
+- Source code
+- History
+- Branch
+- README
+থাকে।
 
 ---
 
-# 📌 Git Workflow
+# 📘 Module 3 — README & .gitignore
 
-```bash
-Create File
-   ↓
-git add
-   ↓
-git commit
-   ↓
-History Saved
+## 📌 README.md
+
+Project documentation file।
+
+## 📌 .gitignore
+
+যে file Git track করবে না।
+
+Example:
+
+```gitignore
+build/
+.env
+node_modules/
 ```
 
 ---
 
-# 📌 Step 1 — Git Install Check
-
-টার্মিনালে লিখুন:
+# 📘 Module 4 — Local Project → GitHub Connection
 
 ```bash
-git --version
-```
-
-👉 যদি version দেখায় তাহলে Git install আছে।
-
-### Example
-
-```bash
-git version 2.45.1
-```
-
----
-
-# 📌 Step 2 — Git Configuration
-
-Git কে আপনার নাম ও email জানাতে হবে।
-
-## 🔹 Name সেট করুন
-
-```bash
-git config --global user.name "Your Name"
-```
-
-## 🔹 Email সেট করুন
-
-```bash
-git config --global user.email "you@gmail.com"
-```
-
-## 🔹 সব Config দেখুন
-
-```bash
-git config --list
-```
-
----
-
-# 📌 Step 3 — Project Folder Create
-
-```bash
-mkdir git-basic-demo
-```
-
-👉 নতুন folder তৈরি হবে।
-
----
-
-# 📌 Step 4 — Folder এ প্রবেশ
-
-```bash
-cd git-basic-demo
-```
-
----
-
-# 📌 Step 5 — Git Initialize
-
-```bash
+mkdir github-course
+cd github-course
 git init
 ```
 
-👉 এটি folder কে Git repository বানাবে।
-
----
-
-# 📌 Git Repository কী?
-
-Repository হলো:
-
-👉 Git tracked project folder
-
----
-
-# 📌 Step 6 — File Create
-
-## Windows
-
 ```bash
-echo Hello Git > app.txt
-```
-
-## Mac/Linux
-
-```bash
-touch app.txt
+git remote add origin https://github.com/user/repo.git
 ```
 
 ---
 
-# 📌 Step 7 — Git Status
+# 📘 Module 5 — Push / Pull / Clone
+
+## Push
 
 ```bash
-git status
+git push -u origin main
 ```
 
-👉 Git কোন file change হয়েছে দেখাবে।
-
-### Example
+## Pull
 
 ```bash
-Untracked files:
-app.txt
+git pull origin main
+```
+
+## Clone
+
+```bash
+git clone https://github.com/user/repo.git
 ```
 
 ---
 
-# 📌 Git Status Meaning
+# 📘 Module 6 — Branch Workflow
 
-| Status    | Meaning                |
-| --------- | ---------------------- |
-| Untracked | Git এখনো track করছে না |
-| Modified  | File change হয়েছে      |
-| Staged    | Commit এর জন্য ready   |
-
----
-
-# 📌 Step 8 — Git Add
+## Branch Create
 
 ```bash
-git add .
+git switch -c feature-login
 ```
 
-👉 সব file staging area তে যাবে।
+## Merge
+
+```bash
+git merge feature-login
+```
 
 ---
 
-# 📌 Staging Area কী?
+# 📘 Module 7 — Pull Request (PR)
 
-এটি commit এর আগে temporary area।
+PR হলো Code Review Request।
 
-```bash
-Working Directory
-      ↓
-Staging Area
-      ↓
+Workflow:
+
+```text
+Create Branch
+    ↓
+Code
+    ↓
 Commit
+    ↓
+Push
+    ↓
+Create PR
+    ↓
+Review
+    ↓
+Merge
 ```
 
 ---
 
-# 📌 Step 9 — Commit
+# 📘 Module 8 — Fork & Open Source
 
-```bash
-git commit -m "First commit"
+Fork মানে অন্যের repository নিজের account এ copy করা।
+
+---
+
+# 📘 Module 9 — Issues & Collaboration
+
+Issues ব্যবহার করা হয়:
+- Bug tracking
+- Feature request
+- Discussion
+
+---
+
+# 📘 Module 10 — SSH vs HTTPS
+
+## HTTPS
+
+```text
+https://github.com/user/repo.git
+```
+
+## SSH
+
+```text
+git@github.com:user/repo.git
 ```
 
 ---
 
-# 📌 Commit কী?
+# 📘 Module 11 — Professional Workflow
 
-Commit হলো:
-
-👉 Project snapshot save করা
-
----
-
-# 📌 Step 10 — Commit History দেখুন
-
-```bash
-git log
-```
-
-👉 সব commit history দেখাবে।
-
----
-
-# 📌 Short History
-
-```bash
-git log --oneline
-```
-
-### Example
-
-```bash
-a45f2d1 First commit
+```text
+Clone Repo
+    ↓
+Create Feature Branch
+    ↓
+Code
+    ↓
+Commit
+    ↓
+Push
+    ↓
+Pull Request
+    ↓
+Review
+    ↓
+Merge
 ```
 
 ---
 
-# 📌 দ্বিতীয় Commit Example
+# 📘 Module 12 — Best Practices
 
-File edit করুন:
-
-```bash
-echo New Feature >> app.txt
-```
-
-তারপর:
-
-```bash
-git add .
-git commit -m "Added new feature"
-```
+✅ Small commits করুন  
+✅ Feature branch ব্যবহার করুন  
+✅ README maintain করুন  
+✅ Secrets upload করবেন না  
 
 ---
 
-# 📌 Final Workflow
+# 🎯 Final Learning Outcome
 
-```bash
-Create File
-   ↓
-git status
-   ↓
-git add .
-   ↓
-git commit
-   ↓
-git log
-```
+এই course শেষে আপনি পারবেন:
+
+✅ GitHub professionally ব্যবহার করতে  
+✅ Team collaboration করতে  
+✅ Pull Request করতে  
+✅ Open source contribution শুরু করতে  
 
 ---
 
-# 🧪 Class Practice Task
+# ❤️ Happy Coding
 
-## টাস্ক ১
-
-✔ Folder তৈরি করুন
-✔ Git init করুন
-
----
-
-## টাস্ক ২
-
-✔ app.txt তৈরি করুন
-✔ Commit করুন
-
----
-
-## টাস্ক ৩
-
-✔ আবার file modify করুন
-✔ দ্বিতীয় commit করুন
-
----
-
-# 📌 Important Commands Cheat Sheet
-
-```bash
-git --version
-
-git config --global user.name "Your Name"
-
-git config --global user.email "you@gmail.com"
-
-git init
-
-git status
-
-git add .
-
-git commit -m "message"
-
-git log
-
-git log --oneline
-```
-
----
-
-# 🎯 আজকের ক্লাস শেষে আপনি পারবেন
-
-✅ Git initialize করতে
-✅ File track করতে
-✅ Commit করতে
-✅ History দেখতে
-✅ Basic Git workflow বুঝতে
-
----
-
-# 📚 Homework
-
-১. নতুন project তৈরি করুন
-২. ৩টি commit করুন
-৩. git log দেখুন
-৪. Different commit message ব্যবহার করুন
-
-### Example
-
-```bash
-Initial project setup
-
-Added login page
-
-Fixed button issue
-```
-
----
-
-# 👨‍🏫 Instructor
-
-**Goutom Roy**
-Flutter Mobile App Developer
+Made for Beginner Developers 🚀
